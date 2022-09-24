@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  },
+  "name": "simon-says",
+  "version": "1.0.0",
+  "description": "Game made with JS and Bootstrap",
+  "main": "index.html",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ArgnEA",
+  "license": "ISC"
+}
