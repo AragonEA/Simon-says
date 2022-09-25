@@ -7,4 +7,11 @@ let $playButton = document.querySelector('button[type=button]');
 $playButton.onclick = startGame;
 
 function startGame() {
+  resetVariables();
+function resetVariables() {
+  computerSequense = [];
+  userSequence = [];
+  userScore = 0;
+}
+
 }
