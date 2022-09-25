@@ -8,6 +8,7 @@ $playButton.onclick = startGame;
 
 function startRound() {
   changeTitle('Follow the sequence');
+  blockUserInput();
   startComputerTurn();
 
 function startComputerTurn() {
@@ -30,6 +31,11 @@ function getRandomSquare() {
   return $square[Math.floor(Math.random() * $square.length)];
 }
 
+function blockUserInput() {
+  document.querySelectorAll('.square').forEach(function ($square) {
+    $square.onclick = "";
+  });
+}
 
 function highlightSquare($square) {
   $square.style.opacity = 1.5;
