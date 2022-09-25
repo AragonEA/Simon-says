@@ -12,6 +12,13 @@ body>div {
     margin-top: 5rem;
 }
 
+header {
+    text-align: end;
+
+    padding-right: 20px;
+
+}
+
 #title {
     color: white;
     text-align: center;
