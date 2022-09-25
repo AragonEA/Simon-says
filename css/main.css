@@ -1,5 +1,7 @@
 body {
-    background-color: currentColor;
+    background: linear-gradient(to right, darkred, black);
+    padding: 0;
+    margin: 0;
 }
 
 p {
