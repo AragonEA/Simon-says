@@ -78,7 +78,7 @@ function userTurn(event) {
 
   if (userSequence.length === computerSequense.length) {
     blockUserInput();
-    startRound();
+    setTimeout(startRound, 1000);
   }
 }
 
