@@ -12,6 +12,8 @@ function startRound() {
   startComputerTurn();
   startUserTurn();
   userSequence = [];
+}
+
 function startUserTurn() {
   let userTurnDelay = (computerSequense.length + 1) * 1000;
   setTimeout(function () {
@@ -52,7 +54,27 @@ function highlightSquare($square) {
 }
 
 function unlockUserInput() {
+  document.querySelectorAll('.square').forEach(function ($square) {
+    $square.onclick = userTurn;
   });
+}
+
+function userTurn(event) {
+  const $square = event.target;
+  highlightSquare($square);
+  userSequence.push($square);
+
+  const $computerSquare = computerSequense[userSequence.length - 1];
+  if ($square.id !== $computerSquare.id) {
+    blockUserInput();
+    changeTitle('You lost!');
+    return;
+  }
+
+  if (userSequence.length === computerSequense.length) {
+    blockUserInput();
+    startRound();
+  }
 }
 
 function startGame() {
