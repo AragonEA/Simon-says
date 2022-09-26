@@ -8,6 +8,7 @@ $playButton.onclick = startGame;
 
 function startRound() {
   changeTitle('Follow the sequence');
+  blockStartButton();
   blockUserInput();
   startComputerTurn();
   startUserTurn();
@@ -18,6 +19,7 @@ function startUserTurn() {
   let userTurnDelay = (computerSequense.length + 1) * 1000;
   setTimeout(function () {
     changeTitle('Your turn');
+    unlockStartButton();
     unlockUserInput();
   }, userTurnDelay);
 }
@@ -86,6 +88,17 @@ function resetVariables() {
   computerSequense = [];
   userSequence = [];
   userScore = 0;
+}
+
+function blockStartButton() {
+  $playButton.onclick = "";
+  $playButton.className = "hidden"
+}
+
+function unlockStartButton() {
+  $playButton.onclick = startGame;
+  $playButton.className = "btn btn-primary"
+  $playButton.textContent = "Start a new game"
 }
 
 }
