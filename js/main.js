@@ -10,6 +10,15 @@ function startRound() {
   changeTitle('Follow the sequence');
   blockUserInput();
   startComputerTurn();
+  startUserTurn();
+  userSequence = [];
+function startUserTurn() {
+  let userTurnDelay = (computerSequense.length + 1) * 1000;
+  setTimeout(function () {
+    changeTitle('Your turn');
+    unlockUserInput();
+  }, userTurnDelay);
+}
 
 function startComputerTurn() {
   let $square = getRandomSquare();
@@ -22,9 +31,7 @@ function startComputerTurn() {
   });
 }
 
-function changeTitle(title) {
-  document.querySelector('#title').textContent = title;
-}
+
 
 function getRandomSquare() {
   const $square = document.querySelectorAll('.square');
@@ -42,6 +49,10 @@ function highlightSquare($square) {
   setTimeout(function () {
     $square.style.opacity = 0.5;
   }, 500);
+}
+
+function unlockUserInput() {
+  });
 }
 
 function startGame() {
