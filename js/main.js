@@ -13,6 +13,8 @@ function startRound() {
   startComputerTurn();
   startUserTurn();
   userSequence = [];
+  updateUserScore(userScore);
+  userScore++;
 }
 
 function startUserTurn() {
@@ -70,6 +72,7 @@ function userTurn(event) {
   if ($square.id !== $computerSquare.id) {
     blockUserInput();
     changeTitle('You lost!');
+    updateBestScore(userScore);
     return;
   }
 
@@ -101,4 +104,18 @@ function unlockStartButton() {
   $playButton.textContent = "Start a new game"
 }
 
+function changeTitle(title) {
+  document.querySelector('#title').textContent = title;
+}
+
+function updateUserScore(userScore) {
+  document.querySelector('#score').textContent = "Score: " + userScore;
+}
+
+function updateBestScore(userScore) {
+  userBestScore = document.querySelector('#best-score').textContent.match(/\d+/)[0];
+  if (userBestScore < userScore) {
+    userBestScore = userScore;
+    document.querySelector('#best-score').textContent = "Best score: " + (userBestScore - 1);
+  }
 }
