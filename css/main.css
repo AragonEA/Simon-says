@@ -22,6 +22,11 @@ header {
 #title {
     color: white;
     text-align: center;
+    font-size: 30px;
+}
+
+.hidden {
+    display: none;
 }
 
 #board,
