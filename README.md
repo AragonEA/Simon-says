@@ -1,5 +1,5 @@
 # Simon-says
 A game made with JS &amp; Bootstrap
 
-#Installation
+# Installation
 run `npm install`
